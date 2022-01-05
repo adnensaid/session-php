@@ -1,4 +1,25 @@
-<?php require 'inc/head.php'; ?>
+<?php 
+require 'inc/head.php';
+if (!empty($_POST)) {
+    if(!empty($_POST['loginname'])){
+        session_start();
+        $_SESSION['loginname'] = $_POST['loginname'];
+        header('Location: /index.php');
+        exit();
+    } 
+    else {
+        header('Location: /login.php');
+    } 
+}
+/*
+
+Sur la page login.php, lorsqu'un utilisateur entre un nom, 
+enregistre ce nom en session
+(ne demande pas de mot de passe pour cet exercice).
+Une fois identifié, redirige l'utilisateur sur la page index.php
+
+*/
+?>
 <div class="container" style="margin-top:40px">
     <div class="row">
         <div class="col-sm-6 col-md-4 col-md-offset-4">
