@@ -6,7 +6,9 @@ if ($_SESSION['loginname']) {
 <section class="cookies container-fluid">
     <div class="row">
        <h4> shopping cart items : </h4>
-        <p> <?= $_SESSION['cookieName']; ?> </p> 
+        <?php foreach ($_SESSION['cart'] as $item) { ?>
+            <p> <?= $item ?> </p>
+        <?php } ?>
     </div>
 </section>
 <?php

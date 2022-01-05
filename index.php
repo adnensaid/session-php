@@ -3,7 +3,8 @@
 <?php 
     if (!empty($_GET)) {
         $id = $_GET['add_to_cart'];
-        $_SESSION['cookieName'] = $catalog[$id]['name']; 
+        $cart = [];
+        array_push($_SESSION['cart'], $catalog[$id]['name']);
     }
 ?>
 <section class="cookies container-fluid">
